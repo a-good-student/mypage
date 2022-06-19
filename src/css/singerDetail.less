@@ -1,0 +1,113 @@
+.singerDetail{
+  width: 100%;
+  font-size: var(--word-size-small);
+  color: var(--main-color);
+  h4{
+    padding: 0 10px;
+    font-size: var(--word-size-big);
+    border-left: 2px solid;
+  }
+  .singerDetailTop{
+    width: 95%;
+    margin: 10px auto;
+    height: 150px;
+    background-color: rgba(231, 228, 228, 0.1);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-radius: 8px;
+    .singerDetailImg{
+      width: 177px;
+      height: 144px;
+      margin: 0 10px 0 5px;
+      border-radius: 6px;
+      overflow: hidden;
+      img{
+        width: 100%;
+      }
+    }
+    .singerDetailTitle{
+      width: 60%;
+      height: 138px;
+      p{
+        margin: 5px 0;
+        a{
+          width: 40px;
+          height: 40px;
+          /*height: 40px;*/
+          margin-right: 5px;
+          border-radius: 50%;
+          background-size: 52px 42px;
+          background-position: center center;
+          background-repeat: no-repeat;
+        }
+      }
+      p:nth-child(1){
+        font-size: var(--word-size-middle);
+        color: var(--main-color);
+      }
+      p:nth-child(2){
+        display: flex;
+        align-items: center;
+      }
+      p:last-child{
+        height: 45px;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.3);
+        overflow-y: scroll;
+      }
+      ::-webkit-scrollbar {
+        /*滚动条整体样式*/
+        width : 0;  /*高宽分别对应横竖滚动条的尺寸*/
+        height: 0;
+        background: transparent;
+      }
+    }
+  }
+  .singerDetailBot{
+    width: 95%;
+    margin: 10px auto;
+    ul{
+      width: 100%;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      flex-flow: wrap;
+      li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        margin: 8px;
+        img{
+          width: 150px;
+          height: 150px;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-bottom: 5px;
+          transition: .4s;
+          border: 5px solid rgba(255, 255, 255, 0.2);
+        }
+        p{
+          text-align: center;
+        }
+        img:hover{
+          border-color: rgba(88, 87, 87, 0.1);
+          box-shadow: 0 0 5px #fff;
+        }
+      }
+    }
+    .singerPageBtn{
+      float: left;
+      margin: 10px 5px;
+      a{
+        transition: 0.3s;
+        margin-right: 15px;
+      }
+      a:hover{
+        color: #fff;
+      }
+    }
+  }
+}

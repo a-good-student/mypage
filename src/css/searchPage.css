@@ -1,0 +1,193 @@
+.searchPage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  font-family: var(--main-font-family);
+}
+.searchPage .search_main {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: column;
+  transform: translate(-50%, -50%);
+}
+.searchPage .search_main .search_time {
+  font-weight: var(--thin-weight);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 2.5rem;
+  padding: 20px;
+  transition: 0.4s;
+}
+.searchPage .search_main .search_bar {
+  position: relative;
+  max-width: 600px;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+.searchPage .search_main .search_bar input {
+  outline: none;
+  line-height: 25px;
+  border: 2px solid var(--search-border-color);
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 5px 35px 5px 15px;
+  width: 100%;
+  color: var(--bottom-color);
+  font-size: var(--word-size-middle);
+  caret-color: var(--search-word-color);
+  transition: 0.4s;
+  font-family: var(--main-font-family);
+}
+.searchPage .search_main .search_bar span {
+  position: absolute;
+  right: 2px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--main-color);
+  font-size: var(--word-size-big);
+  cursor: pointer;
+  transition: 0.4s;
+}
+.searchPage .search_main .search_bar input:focus {
+  border-color: var(--bottom-color);
+}
+.searchPage .search_main .search_bar span:hover {
+  color: var(--bottom-color);
+}
+@media (max-width: 900px) {
+  .searchPage .search_main .search_bar {
+    width: 55%;
+  }
+  .searchPage .search_main .search_time {
+    font-size: 2.1rem;
+  }
+}
+@media (max-width: 600px) {
+  .searchPage .search_main .search_bar {
+    width: 70%;
+  }
+  .searchPage .search_main .search_time {
+    font-size: 1.8rem;
+  }
+}
+.searchPage .search_foot {
+  position: absolute;
+  top: 80%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchPage .search_foot .mcn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.3);
+  transition: 0.4s;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.3) inset;
+}
+.searchPage .search_foot .mcn-active {
+  opacity: 0;
+  visibility: hidden;
+}
+.searchPage .search_foot .mcn:hover {
+  color: rgba(255, 255, 255, 0.8);
+  box-shadow: 1px 1px 7px rgba(255, 255, 255, 0.8) inset;
+}
+.searchPage .search_foot .browser {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  margin: auto;
+  width: 310px;
+  height: 205px;
+  border-radius: 5px;
+  transition: 0.4s;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transform: translateY(200px) scale(0);
+}
+.searchPage .search_foot .browser .browser-title {
+  width: 100%;
+  display: flex;
+  padding: 3px 5px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.1px solid var(--main-active-color);
+}
+.searchPage .search_foot .browser .browser-title span {
+  font-size: var(--word-size-small);
+  color: var(--main-active-color);
+  transition: 0.4s;
+}
+.searchPage .search_foot .browser .browser-title span:last-child:hover {
+  transform: rotateZ(180deg);
+}
+.searchPage .search_foot .browser .bow-wap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+}
+.searchPage .search_foot .browser .bow-wap .bow {
+  position: relative;
+  width: 85px;
+  height: 160px;
+  margin: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-size: cover;
+  border-radius: 5px;
+  font-size: var(--word-size-small);
+  text-shadow: 0 0 5px #000000;
+  color: var(--main-color);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background-position: center center;
+  overflow: hidden;
+  cursor: pointer;
+}
+.searchPage .search_foot .browser .bow-wap .bow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.4s;
+}
+.searchPage .search_foot .browser .bow-wap .bow:hover:before {
+  opacity: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+}
+.searchPage .search_foot .isBrowser {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+/*# sourceMappingURL=searchPage.css.map */

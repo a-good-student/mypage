@@ -1,0 +1,194 @@
+.searchPage{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  font-family: var(--main-font-family);
+  .search_main{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: column;
+    transform: translate(-50%,-50%);
+    .search_time{
+      font-weight: var(--thin-weight);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 2.5rem;
+      padding: 20px;
+      transition: .4s;
+    }
+    .search_bar{
+      position: relative;
+      max-width: 600px;
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: .4s;
+      input{
+        outline: none;
+        line-height: 25px;
+        border: 2px solid var(--search-border-color);
+        border-radius: 10px;
+        background-color: transparent;
+        padding: 5px 35px 5px 15px;
+        width: 100%;
+        color: var(--bottom-color);
+        font-size: var(--word-size-middle);
+        caret-color: var(--search-word-color);
+        transition: .4s;
+        font-family: var(--main-font-family);
+      }
+      span{
+        position: absolute;
+        right: 2px;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: var(--main-color);
+        font-size: var(--word-size-big);
+        cursor: pointer;
+        transition: .4s;
+      }
+      input:focus{
+        border-color: var(--bottom-color);
+      }
+      span:hover{
+        color: var(--bottom-color);
+      }
+    }
+    @media (max-width:900px){
+      //因为input的width是100%，由.search_bar设置
+      .search_bar{
+        width: 55%;
+      }
+      .search_time{
+        font-size: 2.1rem;
+      }
+    }
+    @media (max-width:600px){
+      //因为input的width是100%，由.search_bar设置
+      .search_bar{
+        width: 70%;
+      }
+      .search_time{
+        font-size: 1.8rem;
+      }
+    }
+  }
+  .search_foot{
+    position: absolute;
+    top: 80%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .mcn{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 45px;
+      height: 45px;
+      font-size: 25px;
+      cursor: pointer;
+      border-radius: 5px;
+      color: rgba(255, 255, 255, 0.3);
+      transition: .4s;
+      opacity: 1;
+      visibility: visible;
+      box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.3) inset;
+    }
+    .mcn-active{
+      opacity: 0;
+      visibility: hidden;
+    }
+    .mcn:hover{
+      color: rgba(255, 255, 255, 0.8);
+      box-shadow: 1px 1px 7px rgba(255, 255, 255, 0.8) inset;
+    }
+    .browser{
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      visibility: hidden;
+      margin: auto;
+      width: 310px;
+      height: 205px;
+      border-radius: 5px;
+      transition: .4s;
+      background-color: rgba(0,0,0,.1);
+      box-shadow: 0 0 5px rgba(0,0,0,.3);
+      transform: translateY(200px) scale(0);
+      .browser-title{
+        width: 100%;
+        display: flex;
+        padding: 3px 5px;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: .1px solid var(--main-active-color);
+        span{
+          font-size: var(--word-size-small);
+          color: var(--main-active-color);
+          transition: .4s;
+        }
+        span:last-child:hover{
+          transform: rotateZ(180deg);
+        }
+      }
+      .bow-wap{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: wrap;
+        .bow{
+          position: relative;
+          width: 85px;
+          height: 160px;
+          margin: 5px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          background-size: cover;
+          border-radius: 5px;
+          font-size: var(--word-size-small);
+          text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+          color: var(--main-color);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          background-position: center center;
+          overflow: hidden;
+          cursor: pointer;
+        }
+        .bow::before{
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          transition: .4s;
+        }
+        .bow:hover:before{
+          opacity: 1;
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.4),transparent);
+        }
+      }
+    }
+    .isBrowser{
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+  }
+}

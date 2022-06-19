@@ -1,0 +1,224 @@
+.albumDetail{
+  width: 100%;
+  font-size: var(--word-size-small);
+  color: var(--main-color);
+  h4{
+    padding: 0 10px;
+    font-size: var(--word-size-big);
+    border-left: 2px solid;
+  }
+  .albumDetailTopImg{
+    width: 95%;
+    margin: 10px auto;
+    height: 150px;
+    background-color: rgba(231, 228, 228, 0.1);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-radius: 8px;
+    .albumDetailImg{
+      width: 177px;
+      height: 144px;
+      margin: 0 10px 0 5px;
+      border-radius: 6px;
+      overflow: hidden;
+      img{
+        width: 100%;
+      }
+    }
+    .albumDetailTitle{
+      width: 60%;
+      height: 138px;
+      p{
+        margin: 5px 0;
+        a{
+          width: 40px;
+          height: 40px;
+          /*height: 40px;*/
+          margin-right: 5px;
+          border-radius: 50%;
+          background-size: 52px 42px;
+          background-position: center center;
+          background-repeat: no-repeat;
+        }
+      }
+      p:nth-child(1){
+        font-size: var(--word-size-middle);
+        color: var(--main-color);
+      }
+      p:nth-child(2){
+        display: flex;
+        align-items: center;
+      }
+      p:last-child{
+        height: 45px;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.3);
+        overflow-y: scroll;
+      }
+      ::-webkit-scrollbar {
+        /*滚动条整体样式*/
+        width : 0;  /*高宽分别对应横竖滚动条的尺寸*/
+        height: 0;
+        background: transparent;
+      }
+    }
+  }
+  .albumDetailMusic{
+    width: 95%;
+    margin: 15px auto;
+    p{
+      display: flex;
+      justify-content: space-between;
+      color: var(--main-active-color);
+      margin-bottom: 5px;
+    }
+    ul{
+      width: 100%;
+      margin-top: 10px;
+      /*background-color: rgba(51, 51, 51, 0.1);*/
+      border-radius: 4px;
+      li{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 7px 10px;
+        color: var(--main-color);
+        /*background-color: white;*/
+        border-radius: 5px;
+        font-size: var(--word-size-small);
+        transition: .4s;
+        .mde{
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .mde:nth-child(1){
+          width: 150px;
+          height: 20px;
+        }
+        .mde:nth-child(1){
+          i{
+            cursor: pointer;
+            transition: .4s;
+            color: var(--search-border-color);
+          }
+          i:hover{
+            color: var(--bottom-color);
+          }
+        }
+        .mde:nth-child(2){
+          width: 100px;
+          height: 20px;
+        }
+        .mde:nth-child(3){
+          width: 40px;
+          height: 20px;
+        }
+        .mde:nth-child(4){
+          width: 40px;
+          height: 20px;
+          /*background-color: #F6b4a6;*/
+        }
+        .btn{
+          width: 40px;
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          font-size: var(--word-size-big);
+          /*background-color: #F6b4a6;*/
+          span{
+            transition: .4s;
+            padding-right: 5px;
+            cursor: pointer;
+          }
+          span:hover{
+            color: var(--bottom-color)
+          }
+        }
+      }
+      li:not(:first-child):hover{
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      .del{
+        background-color: transparent;
+        color: var(--main-active-color);
+        border: 0;
+      }
+    }
+  }
+  .albumDetailComment{
+    width: 95%;
+    margin: 0 auto;
+    p{
+      margin: 15px 5px;
+      color: var(--main-active-color);
+    }
+    ul{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: wrap;
+      li{
+        width: 185px;
+        height: 100px;
+        margin: 0 7px 15px 7px;
+        border-radius: 5px;
+        overflow-y: scroll;
+        transition: all 0.5s;
+        background-color: rgba(51, 51, 51, 0.3);
+        .comhead{
+          display: flex;
+          align-items: center;
+          img{
+            width: 30px;
+            margin: 5px 4px 0 5px;
+            border-radius: 50%;
+          }
+        }
+        p{
+          margin: 4px;
+        }
+        .comfoot{
+          display: flex;
+          justify-content: space-between;
+          margin: 5px;
+        }
+      }
+      li:hover{
+        box-shadow: 0 0 10px #fff;
+        background-color: rgba(51, 51, 51, 0.5);
+      }
+      ::-webkit-scrollbar {
+        /*滚动条整体样式*/
+        width : 0;  /*高宽分别对应横竖滚动条的尺寸*/
+        height: 0;
+        background: transparent;
+      }
+    }
+    .pageBtn{
+      width: 100%;
+      margin: 10px 5px;
+      float: left;
+      height: 35px;
+      /*background-color: aqua;*/
+    }
+  }
+  @media (max-width: 1100px) {
+    .albumDetailComment{
+      display: none;
+    }
+  }
+  @media (max-width: 900px) {
+  .albumDetailTopImg{
+    .albumDetailTitle{
+      .description{
+        display: none;
+      }
+    }
+  }
+}
+}
+

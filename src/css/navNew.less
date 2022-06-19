@@ -1,0 +1,152 @@
+.nav{
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100vh;
+  transition: .4s;
+  z-index: var(--fourth-zIndex);
+  /*
+    ../static/bg1.jpg
+    https://www.bing.com/th?id=OHR.HaagaRhododendron_ZH-CN3375001658_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp
+    https://api.dujin.org/bing/1920.php
+  */
+  background-size: cover; background-position: center center;
+  .select_backgroundImage{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    opacity: 0;
+    visibility: hidden;
+    width: 55%;
+    height: 400px;
+    transition: .4s;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: calc(var(--first-zIndex)*2);
+    transform: translateY(100px) scale(0.5);
+    p{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      a{
+        display: block;
+        padding: 5px 5px 0;
+        font-size: var(--word-size-middle);
+      }
+      span{
+        transition: .4s;
+        padding: 5px 5px 0;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      span:hover{
+        color: var(--bottom-color)
+      }
+    }
+    .main{
+      width: 100%;
+      margin: 5px auto;
+      height: 300px;
+      overflow-y: scroll;
+      border-top: .1px solid var(--bottom-color);
+      border-bottom: .1px solid var(--bottom-color);
+      ul{
+        width: 100%;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: wrap;
+        li{
+          a{
+            position: relative;
+            margin: 5px;
+            width: 200px;
+            height: 120px;
+            display: block;
+            overflow: hidden;
+            border-radius: 5px;
+            cursor: pointer;
+            img{
+              transition: .4s;
+              width: 100%;
+              height: 100%;
+              flex-shrink: 0;
+              object-fit: cover;
+            }
+            i{
+              position: absolute;
+              right: 5px;
+              bottom: 5px;
+              opacity: 0;
+              transition: .4s;
+              font-size: 25px;
+              font-weight: bold;
+              color: var(--bottom-color);
+              visibility: hidden;
+            }
+          }
+          .a_selected{
+            i{
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+          a:hover{
+            img{
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+    }
+    ::-webkit-scrollbar {
+      /*滚动条整体样式*/
+      width : 0;  /*高宽分别对应横竖滚动条的尺寸*/
+      height: 0;
+      background-color: transparent;
+    }
+    .upload-demo{
+      text-align: center;
+      margin: 0 10px;
+      float: right;
+    }
+  }
+  .select_backgroundImage_active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+}
+/*
+  <transition>标签提供的css属性
+  v-enter,v-leave: 淡入淡出的初始属性
+  v-enter-active,v-leave-active: 淡入淡出的中间过渡效果
+  v-enter-to,v-leave-to: 淡入淡出的最终效果
+*/
+.slide-fade-enter{
+  opacity: 0;
+  transform: translateY(30%);
+}
+.slide-fade-leave{
+  opacity: 1;
+  transform: translateY(0);
+}
+.slide-fade-enter-active,
+.slide-fade-leave-active{
+  transition: all .6s ease;
+}
+.slide-fade-enter-to{
+  opacity: 1;
+  transform: translateY(0);
+}
+.slide-fade-leave-to{
+  opacity: 0;
+  transform: translateY(30%);
+}

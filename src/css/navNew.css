@@ -1,0 +1,43 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: var(--fourth-zIndex);
+  /*
+    ../static/bg1.jpg
+    https://www.bing.com/th?id=OHR.HaagaRhododendron_ZH-CN3375001658_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp
+    https://api.dujin.org/bing/1920.php
+  */
+  background-image: url('../static/bg1.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+/*
+  <transition>标签提供的css属性
+  v-enter,v-leave: 淡入淡出的初始属性
+  v-enter-active,v-leave-active: 淡入淡出的中间过渡效果
+  v-enter-to,v-leave-to: 淡入淡出的最终效果
+*/
+.slide-fade-enter {
+  opacity: 0;
+  transform: translateY(30%);
+}
+.slide-fade-leave {
+  opacity: 1;
+  transform: translateY(0);
+}
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.6s ease;
+}
+.slide-fade-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateY(30%);
+}
+/*# sourceMappingURL=navNew.css.map */

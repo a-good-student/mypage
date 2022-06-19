@@ -1,0 +1,157 @@
+.musicPageEveryday{
+  width: 100%;
+  h4{
+    padding: 0 10px;
+    color: var(--main-color);
+    border-left: 2px solid;
+  }
+  .musicPageEveryday_head{
+    width: 100%;
+    margin: 15px 0;
+    //background-color: white;
+    .music_wap{
+      .music_detail{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 7px 10px;
+        color: var(--main-color);
+        //background-color: white;
+        border-radius: 5px;
+        font-size: var(--word-size-small);
+        transition: .4s;
+        //border-bottom: .1px solid var(--main-active-color);
+        .mde{
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .mde:nth-child(1){
+          width: 150px;
+          height: 20px;
+          i{
+            color: var(--search-border-color);
+          }
+          i:hover{
+            color: var(--bottom-color);
+          }
+        }
+        .mde:nth-child(2){
+          width: 100px;
+          height: 20px;
+        }
+        .mde:nth-child(3){
+          width: 40px;
+          height: 20px;
+        }
+        .mde:nth-child(4){
+          width: 40px;
+          height: 20px;
+          //background-color: #F6b4a6;
+        }
+        .btn{
+          width: 40px;
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          font-size: var(--word-size-big);
+          //background-color: #F6b4a6;
+          span{
+            transition: .4s;
+            padding-right: 5px;
+            cursor: pointer;
+          }
+          span:hover{
+            color: var(--bottom-color)
+          }
+        }
+      }
+      .music_detail:not(:first-child):hover{
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      .del{
+        background-color: transparent;
+        color: var(--main-active-color);
+        border: 0;
+      }
+    }
+  }
+  .musicPageEveryday_nav{
+    width: 100%;
+    margin: 15px 0;
+    //background-color: white;
+    .songSheets{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: wrap;
+      li{
+        margin: 10px;
+        a{
+          transition: .4s;
+          position: relative;
+          display: block;
+          width: 150px;
+          height: 150px;
+          cursor: pointer;
+          //background-color: #F6b4a6;
+          overflow: hidden;
+          border-radius: 5px;
+          img{
+            transition: .4s;
+            border-radius: 5px;
+            width: 100%;
+          }
+          span{
+            display: block;
+            transition: 0.4s;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 80%;
+            font-size: var(--word-size-middle);
+            color: rgba(255, 255, 255, 0);
+            z-index: 999;
+          }
+          i{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            font-size: 35px;
+            color: var(--main-color);
+            transition: .4s;
+            opacity: 0;
+            transform: translate(-50%,-50%);
+          }
+          i:hover{
+            color: var(--bottom-color);
+          }
+        }
+        a:hover{
+          img{
+            transform: scale(1.1);
+          }
+          span{
+            color: var(--main-color);
+          }
+          i{
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 850px){
+    .musicPageEveryday_head{
+      .music_wap {
+        .music_detail {
+          .mde:nth-child(3){
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
